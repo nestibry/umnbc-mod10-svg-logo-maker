@@ -39,12 +39,8 @@ const questions = [
 // Create a function to write README file
 function writeToFile(fileName, data) {
     
-    data.badgeUrl = renderLicenseBadge(data.license);
-    data.licenseUrl = renderLicenseLink(data.license);
-    data.licenseSectionStr = renderLicenseSection(data.license, data.licenseUrl);
-    
-    let markdownStr = generateMarkdown(data);
-    fs.writeFile(fileName, markdownStr, (err) => err ? console.log(err) : console.log(`Success, see: ${fileName}`));
+    let svgStr = JSON.stringify(data);
+    fs.writeFile(fileName, svgStr, (err) => err ? console.log(err) : console.log(`Success, see: ${fileName}`));
 
 }
 
@@ -53,7 +49,7 @@ function init() {
 
     inquirer.prompt(questions)
     .then(response => {
-        writeToFile('./assets/output/generated-readme.md', response);
+        writeToFile('./examples/test-output.txt', response);
     });
 
 }
