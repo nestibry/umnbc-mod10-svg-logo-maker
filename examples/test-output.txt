@@ -1,0 +1,1 @@
+{"text":"thn","textcolor":"white","shape":"circle","shapecolor":"blue"}
