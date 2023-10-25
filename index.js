@@ -1,10 +1,24 @@
 // Include packages needed for this application
-const inquirer = require('inquirer');
+// const colorname = require('color-name');
+// import colors from 'color-name';
+const inquirer  = require('inquirer');
 const fs = require('fs');
+var convert = require('color-convert');
+console.log(convert.keyword.rgb('blah'));
 
 
-// Create an array of questions for user input
 
+// let colorValue = "red";
+// let colorLowerCase = colorValue.toLowerCase();
+// let rgb = colors.red;
+
+// console.log(rgb);
+
+// const testColorPattern = /^#?([0-9A-F]{6})$/i.test(rgb);
+// console.log(testColorPattern);
+
+
+// Create an array of questions for user input and their validation functions
 const logoTextLengthValidator = async (input) => {
     if( input.length > 3 ){
         return "Incorrect text length. Logo text needs to be 3 characters or less. Delete characters to try again...";
@@ -12,11 +26,14 @@ const logoTextLengthValidator = async (input) => {
     return true;
 }
 
-const logoColorValidator = async (input) => {
-    if( input.length > 20 ){
-        return "Incorrect text length. Logo text needs to be 3 characters or less. Delete characters to try again...";
-    }
-    return true;
+// Borrowed from ChatGPT prompt "In JavaScript, how to check if a text word like 'red' or 'blue' is a hexadecimal color" 
+// => see StackOverflow that describes this type of test method https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation
+const isHexadecimalColor = async (input) => {
+    // Define a regular expression pattern for a hexadecimal color code
+    const hexColorPattern = /^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/;
+
+    // Use the test() method to check if the input matches the pattern
+    return hexColorPattern.test(input);
 }
 
 const questions = [
@@ -43,14 +60,14 @@ const questions = [
             "triangle",
             "square",
         ],
-        validate: logoColorValidator,
+        validate: isHexadecimalColor,
     },
     {
         type: "input",
         name: "shapecolor",
         message: "Enter a shape color:",
         default: "blue",
-        validate: logoColorValidator,
+        validate: isHexadecimalColor,
     },
 ];
 
