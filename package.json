@@ -4,7 +4,7 @@
   "description": "A Node.js command-line application that takes in user input to generate a logo and save it as an SVG file. The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a .svg file.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "dependencies": {
     "color-convert": "^2.0.1",
     "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
