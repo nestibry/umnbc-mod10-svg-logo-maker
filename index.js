@@ -4,6 +4,21 @@ const fs = require('fs');
 
 
 // Create an array of questions for user input
+
+const logoTextLengthValidator = async (input) => {
+    if( input.length > 3 ){
+        return "Incorrect text length. Logo text needs to be 3 characters or less. Delete characters to try again...";
+    }
+    return true;
+}
+
+const logoColorValidator = async (input) => {
+    if( input.length > 20 ){
+        return "Incorrect text length. Logo text needs to be 3 characters or less. Delete characters to try again...";
+    }
+    return true;
+}
+
 const questions = [
     
     {
@@ -11,6 +26,7 @@ const questions = [
         name: "text",
         message: "Enter text for the logo, cannot be more than 3 characters:",
         default: "thn",
+        validate: logoTextLengthValidator,
     },
     {
         type: "input",
@@ -27,6 +43,7 @@ const questions = [
             "triangle",
             "square",
         ],
+        
     },
     {
         type: "input",
