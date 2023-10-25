@@ -43,13 +43,14 @@ const questions = [
             "triangle",
             "square",
         ],
-        
+        validate: logoColorValidator,
     },
     {
         type: "input",
         name: "shapecolor",
         message: "Enter a shape color:",
         default: "blue",
+        validate: logoColorValidator,
     },
 ];
 
