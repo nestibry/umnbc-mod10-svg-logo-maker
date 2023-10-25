@@ -1,21 +1,7 @@
 // Include packages needed for this application
-// const colorname = require('color-name');
-// import colors from 'color-name';
 const inquirer  = require('inquirer');
-const fs = require('fs');
 var convert = require('color-convert');
-console.log(convert.keyword.rgb('blah'));
-
-
-
-// let colorValue = "red";
-// let colorLowerCase = colorValue.toLowerCase();
-// let rgb = colors.red;
-
-// console.log(rgb);
-
-// const testColorPattern = /^#?([0-9A-F]{6})$/i.test(rgb);
-// console.log(testColorPattern);
+const fs = require('fs');
 
 
 // Create an array of questions for user input and their validation functions
@@ -26,14 +12,18 @@ const logoTextLengthValidator = async (input) => {
     return true;
 }
 
-// Borrowed from ChatGPT prompt "In JavaScript, how to check if a text word like 'red' or 'blue' is a hexadecimal color" 
-// => see StackOverflow that describes this type of test method https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation
-const isHexadecimalColor = async (input) => {
-    // Define a regular expression pattern for a hexadecimal color code
-    const hexColorPattern = /^#?([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/;
+const logoColorValidator = async (input) => {
+    
+    // Define a regular expression pattern for a hexadecimal color code => see StackOverflow that describes this type of test method https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation
+    const hexColorPattern = /^#?([0-9A-F]{6})$/i;
 
-    // Use the test() method to check if the input matches the pattern
-    return hexColorPattern.test(input);
+    // Use the test() method to check if the input matches a hex pattern || if the color name is an rgb value
+    if( hexColorPattern.test(input) || convert.keyword.rgb(input) ){
+        return true;
+    } else {
+        return "Invalid color. Delete characters to try again..."
+    }
+
 }
 
 const questions = [
@@ -48,7 +38,7 @@ const questions = [
     {
         type: "input",
         name: "textcolor",
-        message: "Enter a text color:",
+        message: "Enter a text color (name or hexadecimal value):",
         default: "white",
     },
     {
@@ -60,14 +50,14 @@ const questions = [
             "triangle",
             "square",
         ],
-        validate: isHexadecimalColor,
+        validate: logoColorValidator,
     },
     {
         type: "input",
         name: "shapecolor",
-        message: "Enter a shape color:",
+        message: "Enter a shape color (name or hexadecimal value):",
         default: "blue",
-        validate: isHexadecimalColor,
+        validate: logoColorValidator,
     },
 ];
 
