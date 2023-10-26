@@ -16,6 +16,7 @@ describe("Logo", () => {
     describe("instantiation of inquirer prompts", () => {
 
         // Mock Inquirer to avoid acutal user prompts => from ChatGPT3.5 response to question "in javascript, how to test an inquirer prompt function within a class using jest framework"
+        // Note to TA's: I added this functionality because I understand what it does, just needed help finding a tool to use to mock inquire prompt responses
         beforeEach(() => jest.clearAllMocks());
 
         it("should return the text entered by the user", async () => {
