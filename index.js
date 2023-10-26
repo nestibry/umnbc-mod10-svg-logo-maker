@@ -85,7 +85,8 @@ function init() {
 // init();
 
 const newLogo = new Logo();
-newLogo.setLogoInfo();
+newLogo.setLogoInfo()
+.then( () => console.log(newLogo) );
 
 
 // newLogo.setLogoInfo()
