@@ -4,7 +4,7 @@ var convert = require('color-convert');
 const fs = require('fs');
 
 // Trying out the logo class
-const Logo = require('./lib/shapes.js');
+const Logo = require('./lib/Logo.js');
 
 // Create an array of questions for user input and their validation functions
 const logoTextLengthValidator = async (input) => {
@@ -85,4 +85,10 @@ function init() {
 // init();
 
 const newLogo = new Logo();
-newLogo.setLogoInfo();
+newLogo.setLogoInfo("BKN");
+
+
+// newLogo.setLogoInfo()
+// .then(console.log(newLogo));
+// console.log(newLogo);
+
