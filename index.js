@@ -85,7 +85,7 @@ function init() {
 // init();
 
 const newLogo = new Logo();
-newLogo.setLogoInfo("BKN");
+newLogo.setLogoInfo();
 
 
 // newLogo.setLogoInfo()
