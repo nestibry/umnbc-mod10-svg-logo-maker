@@ -34,17 +34,24 @@ describe("Logo", () => {
     });
     
     // Validation Functions => See https://stackoverflow.com/questions/57321266/how-to-test-inquirer-validation
-    describe("Inquirer Validate Functions", () => {
+    describe("validateLogoTextLength() method", () => {
         
-        it("logoTextLengthValidator() should return true on text length less than or equal to 3 characters entered by the user", async () => {
+        
+        it("should return true on text length less than or equal to 3 characters  and more than 0 characters entered by the user", async () => {
             const myInstance = new Logo();
-            const result = await myInstance.logoTextLengthValidator("thn");
+            const result = await myInstance.validateLogoTextLength("thn");
             expect(result).toBe(true);
         });
 
-        it("logoTextLengthValidator() should return Error Message on text length more than 3 characters entered by the user", async () => {
+        it("should return Error Message on text length more than 3 characters entered by the user", async () => {
             const myInstance = new Logo();
-            const result = await myInstance.logoTextLengthValidator("thn29");
+            const result = await myInstance.validateLogoTextLength("thn4");
+            expect(result).toBe("Incorrect text length. Logo text needs to be 3 characters or less. Delete characters to try again...");
+        });
+
+        it("should return Error Message on text length of 0 characters entered by the user", async () => {
+            const myInstance = new Logo();
+            const result = await myInstance.validateLogoTextLength("");
             expect(result).toBe("Incorrect text length. Logo text needs to be 3 characters or less. Delete characters to try again...");
         });
 
