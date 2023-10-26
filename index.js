@@ -1,6 +1,6 @@
 // Include packages needed for this application
 const inquirer  = require('inquirer');
-var convert = require('color-convert');
+const convert = require('color-convert');
 const fs = require('fs');
 
 // Trying out the logo class
@@ -87,6 +87,15 @@ function init() {
 const newLogo = new Logo();
 newLogo.setLogoInfo()
 .then( () => console.log(newLogo) );
+
+
+// const brandLogo = new Logo();
+// brandLogo.text = "JJJ";
+// brandLogo.textcolor = "white";
+// brandLogo.shape = "circle";
+// brandLogo.shapecolor = "blue";
+
+// console.log(brandLogo);
 
 
 // newLogo.setLogoInfo()
