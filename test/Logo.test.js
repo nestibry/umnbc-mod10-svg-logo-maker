@@ -12,6 +12,9 @@ describe("Logo", () => {
             const logo = new Logo();
             expect(logo).toBeInstanceOf(Logo);
         });
+
+
+
     });
 
     describe("setLogoInfo() method inquirer prompts", () => {
@@ -60,20 +63,20 @@ describe("Logo", () => {
             expect(myInstance.shapecolor).toBe('blue');
         });
 
-        // it("should return the Logo data entered by the user", async () => {
-        //     const newLogo = new Logo();
-        //     newLogo.text = "bmw";
-        //     newLogo.textcolor = "white";
-        //     newLogo.shape = "circle";
-        //     newLogo.shapecolor = "blue";
+        it("should return the Logo data entered by the user", async () => {
+            const newLogo = new Logo();
+            newLogo.text = "bmw";
+            newLogo.textcolor = "white";
+            newLogo.shape = "circle";
+            newLogo.shapecolor = "blue";
             
-        //     // Simulate user input 
-        //     const myInstance = new Logo();
-        //     inquirer.prompt.mockResolvedValue({text:'bmw', textcolor:'white', shape:'circle', shapecolor:'blue'}); 
-        //     await myInstance.setLogoInfo();
+            // Simulate user input 
+            const myInstance = new Logo();
+            inquirer.prompt.mockResolvedValue({text:'bmw', textcolor:'white', shape:'circle', shapecolor:'blue'}); 
+            await myInstance.setLogoInfo();
 
-        //     expect(myInstance).toBe(newLogo);
-        // });
+            expect(myInstance).toMatchObject(newLogo);
+        });
 
 
     });
