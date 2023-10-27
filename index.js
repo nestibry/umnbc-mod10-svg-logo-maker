@@ -1,7 +1,10 @@
 // Include packages needed for this application
 const inquirer  = require('inquirer');
-var convert = require('color-convert');
+const convert = require('color-convert');
 const fs = require('fs');
+
+// Trying out the logo class
+const Logo = require('./lib/Logo.js');
 
 // Create an array of questions for user input and their validation functions
 const logoTextLengthValidator = async (input) => {
@@ -79,4 +82,23 @@ function init() {
 }
 
 // Function call to initialize app
-init();
+// init();
+
+const newLogo = new Logo();
+newLogo.setLogoInfo()
+.then( () => console.log(newLogo) );
+
+
+// const brandLogo = new Logo();
+// brandLogo.text = "JJJ";
+// brandLogo.textcolor = "white";
+// brandLogo.shape = "circle";
+// brandLogo.shapecolor = "blue";
+
+// console.log(brandLogo);
+
+
+// newLogo.setLogoInfo()
+// .then(console.log(newLogo));
+// console.log(newLogo);
+
