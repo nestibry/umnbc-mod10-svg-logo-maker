@@ -12,9 +12,6 @@ describe("Logo", () => {
             const logo = new Logo();
             expect(logo).toBeInstanceOf(Logo);
         });
-
-
-
     });
 
     describe("setLogoInfo() method inquirer prompts", () => {
