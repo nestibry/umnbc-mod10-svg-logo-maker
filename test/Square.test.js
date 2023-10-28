@@ -1,16 +1,16 @@
-const Circle = require('../lib/Circle.js');
+const Square = require('../lib/Square.js');
 
-describe("Circle", () => {
+describe("Square", () => {
 
     describe("instantiation", () => {
 
         it("should instantiate correctly", () => {
             const mytext = "BMW";
             const mytextcolor = "white";
-            const myshape = "circle";
+            const myshape = "square";
             const myshapecolor = "blue";
-            const newShape = new Circle(mytext, mytextcolor, myshape, myshapecolor);
-            expect(newShape).toBeInstanceOf(Circle);
+            const newShape = new Square(mytext, mytextcolor, myshape, myshapecolor);
+            expect(newShape).toBeInstanceOf(Square);
         });
 
         
@@ -19,7 +19,7 @@ describe("Circle", () => {
             const mytextcolor = "white";
             const myshape = "circle";
             const myshapecolor = "blue";
-            const newShape = new Circle(mytext, mytextcolor, myshape, myshapecolor);
+            const newShape = new Square(mytext, mytextcolor, myshape, myshapecolor);
             expect(newShape).toMatchObject({text:mytext, textcolor:mytextcolor, shape:myshape, shapecolor:myshapecolor});
         });
 
@@ -28,12 +28,11 @@ describe("Circle", () => {
             const mytextcolor = "white";
             const myshape = "circle";
             const myshapecolor = "blue";
-            const newShape = new Circle(mytext, mytextcolor, myshape, myshapecolor);
+            const newShape = new Square(mytext, mytextcolor, myshape, myshapecolor);
 
 
-            const expectedSvgStr = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="100" fill=${myshapecolor} /><text x="150" y="120" font-size="60" text-anchor="middle" fill=${mytextcolor}>${mytext}</text></svg>`;
+            const expectedSvgStr = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="50" y="0" rx="0" ry="0" width="200" height="200" fill=${myshapecolor}/><text x="150" y="120" font-size="65" text-anchor="middle" fill=${mytextcolor}>${mytext}</text></svg>`;
     
-        
             expect(newShape.render()).toEqual(expectedSvgStr);
         });
 
