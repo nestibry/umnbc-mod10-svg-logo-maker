@@ -17,7 +17,7 @@ A Node.js command-line application that takes in user input to generate a logo a
 
 ## Usage
 
-#### Click the link to view the [Demo Video](https://drive.google.com/file/d/1sFGa3iuThBwFbmOwFyWgOm3I67zAdO6v/view).
+#### Click the link to view the [Demo Video](https://drive.google.com/file/d/1P1zVUlWf-T9_9awlLSr4AszsSdosfIoI/view).
 ![Demo Video Screenshot](./assets/images/demo-video-screenshot.png)
 
 #### Main Files: 
