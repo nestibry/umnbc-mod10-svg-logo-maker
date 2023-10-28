@@ -23,7 +23,7 @@ describe("Square", () => {
             expect(newShape).toMatchObject({text:mytext, textcolor:mytextcolor, shape:myshape, shapecolor:myshapecolor});
         });
 
-        it("should return the Circle.svgStr correctly", async () => {
+        it("should return the render() method correctly", async () => {
             const mytext = "BMW";
             const mytextcolor = "white";
             const myshape = "circle";
