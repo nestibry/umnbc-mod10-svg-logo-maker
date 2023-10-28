@@ -31,7 +31,7 @@ describe("Circle", () => {
             const newShape = new Circle(mytext, mytextcolor, myshape, myshapecolor);
 
 
-            const expectedSvgStr = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="100" fill=${myshapecolor} /><text x="150" y="120" font-size="60" text-anchor="middle" fill=${mytextcolor}>${mytext}</text></svg>`;
+            const expectedSvgStr = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="100" fill="${myshapecolor}" /><text x="150" y="120" font-size="60" text-anchor="middle" fill="${mytextcolor}">${mytext}</text></svg>`;
     
         
             expect(newShape.render()).toEqual(expectedSvgStr);
