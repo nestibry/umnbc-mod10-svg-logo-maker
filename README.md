@@ -72,6 +72,8 @@ npm run test
 ## Credits
 - © 2023 edX Boot Camps LLC.
 - How to check if a string is a valid hex color represenation, [StackOverflow](https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation)
+- How to test inquirer validation functions, [StackOverflow](https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation)
+- ChatGPT3.5 Prompt: "in javascript, how to test an inquirer prompt function within a class using jest framework" => How to use the mockResolvedValue() method
 
 ## License
 
