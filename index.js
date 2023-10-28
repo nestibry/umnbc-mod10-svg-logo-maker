@@ -17,7 +17,8 @@ const logoTextLengthValidator = async (input) => {
 const logoColorValidator = async (input) => {
     
     // Define a regular expression pattern for a hexadecimal color code => see StackOverflow that describes this type of test method https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation
-    const hexColorPattern = /^#?([0-9A-F]{6})$/i;
+    // const hexColorPattern = /^#?([0-9A-F]{6})$/i;
+    const hexColorPattern = /^#([0-9A-F]{6})$/i;
 
     // Use the test() method to check if the input matches a hex pattern || if the color name is an rgb value
     if( hexColorPattern.test(input) || convert.keyword.rgb(input) ){

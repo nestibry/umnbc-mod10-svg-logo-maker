@@ -117,10 +117,10 @@ describe("Logo", () => {
             expect(result).toBe(true);
         });
 
-        it("should return true on a correct hexadecimal (w/o #) color code entered by the user", async () => {
+        it("should return Error Message on incorrect hexadecimal (w/o #) color code entered by the user", async () => {
             const myInstance = new Logo();
             const result = await myInstance.validateLogoColor("AABBCC");
-            expect(result).toBe(true);
+            expect(result).toBe("Invalid color. Delete characters to try again...");
         });
 
         it("should return Error Message on incorrect color name entered by the user", async () => {
@@ -136,6 +136,5 @@ describe("Logo", () => {
         });
 
     });
-    
     
 });
