@@ -91,20 +91,17 @@ const newLogo = new Logo();
 newLogo.setLogoInfo()
 .then( () => {
 
-
-    console.log(newLogo);
-
     switch(newLogo.shape) {
         case "circle":
             const circleLogo = new Circle(newLogo.text, newLogo.textcolor, newLogo.shape, newLogo.shapecolor);
             var svgStr = circleLogo.render();
             break;
         case "triangle":
-            const triangleLogo = new Triangle (newLogo.text, newLogo.textcolor, newLogo.shape, newLogo.shapecolor);
+            const triangleLogo = new Triangle(newLogo.text, newLogo.textcolor, newLogo.shape, newLogo.shapecolor);
             var svgStr = triangleLogo.render();
             break;
         case "square":
-            const squareLogo = new Triangle (newLogo.text, newLogo.textcolor, newLogo.shape, newLogo.shapecolor);
+            const squareLogo = new Square(newLogo.text, newLogo.textcolor, newLogo.shape, newLogo.shapecolor);
             var svgStr = squareLogo.render();
             break;
         default:
@@ -117,16 +114,4 @@ newLogo.setLogoInfo()
 
 
 
-// const brandLogo = new Logo();
-// brandLogo.text = "JJJ";
-// brandLogo.textcolor = "white";
-// brandLogo.shape = "circle";
-// brandLogo.shapecolor = "blue";
-
-// console.log(brandLogo);
-
-
-// newLogo.setLogoInfo()
-// .then(console.log(newLogo));
-// console.log(newLogo);
 
